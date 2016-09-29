@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Lembrete</string>
+    <string name="plus">+</string>
+    <string name="textview_tmp">label</string>
+
+    <!--tela item_list-->
+    <string name="name">name</string>
+    <string name="tags">tags</string>
+    <string name="date">date</string>
 </resources>
