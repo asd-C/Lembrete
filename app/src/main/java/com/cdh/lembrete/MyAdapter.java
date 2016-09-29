@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -16,8 +15,8 @@ import java.util.List;
 
 public class MyAdapter extends ArrayAdapter<Task>{
 
-    public MyAdapter(Context context, int resource, List<Task> objects) {
-        super(context, resource, objects);
+    public MyAdapter(Context context, List<Task> objects) {
+        super(context, -1, objects);
     }
 
     @NonNull

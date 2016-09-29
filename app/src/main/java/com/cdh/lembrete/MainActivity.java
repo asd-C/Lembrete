@@ -18,17 +18,19 @@ import java.util.ArrayList;
  * @// TODO: 16/9/28 tela de estatistica
  * */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     private ListView listView;
-    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        context = this;
 
+        setup();
+    }
+
+    private void setup() {
         ArrayList<Task> list = new ArrayList<>();
         list.add(new Task("Prova de Fisica", "12/09/2016", new String[]{"Prova"}));
         list.add(new Task("Prova de Matematica", "12/09/2016", new String[]{"Prova"}));
@@ -47,15 +49,14 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Task("Prova de Bio", "12/09/2016", new String[]{"Prova"}));
         list.add(new Task("Prova de Qui", "12/09/2016", new String[]{"Prova"}));
 
-        MyAdapter myAdapter = new MyAdapter(this, -1, list);
+        MyAdapter myAdapter = new MyAdapter(this, list);
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(myAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(context, DetailOfItem.class));
-            }
-        });
+        listView.setOnItemClickListener(this);
+    }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        startActivity(new Intent(this, DetailOfItem.class));
     }
 }

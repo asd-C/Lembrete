@@ -12,6 +12,8 @@ public class Task {
     private String name;
     private String date;
     private List<String> tags;
+    private String description;
+    private String dateCreate;
 
     public Task(String name, String date) {
         this.name = name;
@@ -47,6 +49,22 @@ public class Task {
 
     public List<String> getTags() {
         return tags;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDateCreate() {
+        return dateCreate;
+    }
+
+    public void setDateCreate(String dateCreate) {
+        this.dateCreate = dateCreate;
     }
 
     public String getTagsString() {
